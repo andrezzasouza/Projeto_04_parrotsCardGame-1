@@ -1,0 +1,34 @@
+body{
+    color: #EEF9BF;
+}
+
+.header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-top: 40px;
+}
+
+.cards{
+    background-color: purple;
+    width: 872px;
+    height: 326px;
+    margin-top: 47px;
+    width: 100%;
+
+}
+/*Fonte*/
+h1{
+    color: #75B79E;
+    width: 540px;
+    height: 63px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+    align-self: center;
+}
