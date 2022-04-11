@@ -1,4 +1,4 @@
-let numberCards;
+let numberCards, firstClick;
 
 function gameStart(){
     alert ("Esse é o jogo da memória dos Papagaios, por favor, escolha um número entre 4 e 14 cartas, lembrando de escolher sempre números pares e escrever em caracteres numéricos");
