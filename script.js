@@ -41,7 +41,11 @@ function dealCards(numberCards){
  }
 
 function ulSizeAdjust(list, numberCards){
-    list.style.width = `${132 * (numberCards/2)}px`
+    if (window.screen.width > 414) {
+        list.style.width = `${132 * (numberCards/2)}px`
+    }else {
+        list.style.width = "117px";
+    }
 }
 
 function selectCard(element){

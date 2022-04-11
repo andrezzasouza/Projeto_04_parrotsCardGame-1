@@ -51,7 +51,7 @@ img {
 }
 
 ul{
-    margin:0 auto;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -72,4 +72,21 @@ h1{
     line-height: 66px;
     letter-spacing: -0.004em;
     align-self: center;
+}
+
+/*Mobile*/
+@media (max-width: 414px){
+    h1{
+        font-size: 36px;
+        text-align: center;
+    }
+    ul{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .header{
+        margin-bottom: 80px;
+    }
 }
