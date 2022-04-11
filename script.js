@@ -1,4 +1,4 @@
-let numberCards, firstClick, firstCard, plays = 0, secondCard;
+let numberCards, firstClick, firstCard, plays = 0, secondCard, idInterval, counter = 0;
 
 function gameStart(){
     alert ("Esse é o jogo da memória dos Papagaios, por favor, escolha um número entre 4 e 14 cartas, lembrando de escolher sempre números pares e escrever em caracteres numéricos");
@@ -11,6 +11,7 @@ function gameStart(){
 }
 
     dealCards(numberCards);
+    timer();
 }
 
 function dealCards(numberCards){
@@ -54,18 +55,18 @@ function selectCard(element){
         cardFlip(element);
         firstClick = click;
         firstCard = element;
-        plays ++;
+        cardCounter();
     } else if (click === firstClick) {
         cardFlip(element);
         firstClick = undefined;
-        plays ++;
+        cardCounter();
         endgame();
     } else if (click !== firstClick) {
         cardFlip(element);
         secondCard = element;
         setTimeout(cardUnflip, 1000);
         firstClick = undefined;
-        plays ++;
+        cardCounter;
     }
 }
 
@@ -85,8 +86,51 @@ function endgame(){
     const cards = document.querySelectorAll("div.flipped");
 
     if (cards.length === 2*numberCards){
-        alert("Você ganhou em " + plays + " jogadas!");
+        alert("Você ganhou em " + plays + " jogadas e " + counter + " segundos!");
+        clearInterval(idInterval);
+        gameRestart();
     }
+}
+
+function gameRestart(){
+    let restart = prompt("Você deseja reiniciar o jogo? (Digite sim ou não)");
+    if (restart === "sim"){
+        cleanScreen();
+        gameStart();
+    } else if (restart === "não"){
+        alert("Obrigado por jogar!");
+    } else {
+        gameRestart();
+    }
+}
+
+function cleanScreen() {
+    const list = document.querySelector("ul");
+    list.innerHTML = "";
+    counter = 0;
+    plays = 0;
+}
+
+function timer() {
+    idInterval = setInterval(increment, 1000);
+}
+
+function increment() {
+    counter ++;
+    document.querySelector(".timer").innerHTML = formatTime(counter);
+}
+
+function formatTime(counter) {
+    return[
+        parseInt(counter / 60 % 60),
+        parseInt(counter % 60)
+    ]
+        .join(":");
+}
+
+function cardCounter(){
+    plays ++;
+document.querySelector(".cardCounter").innerHTML = ` Jogadas:${plays}` ;
 }
 
 gameStart();

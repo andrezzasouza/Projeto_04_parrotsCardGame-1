@@ -17,6 +17,38 @@ img {
     margin-bottom: 40px;
 }
 
+.timer{
+    background-color: #75B79E;
+    box-shadow: 1px 1px 1px (0,0,0,.3);
+    border-radius: 0 0 0 15px;
+    z-index: 1;
+    font-family: 'Roboto';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    top: 0;
+    right: 0;
+    position: fixed;
+}
+
+.cardCounter{
+    background-color: #75B79E;
+    box-shadow: 1px 1px 1px (0,0,0,.3);
+    border-radius: 0 0 15px 0;
+    z-index: 1;
+    font-family: 'Roboto';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
 .face{
     background-color: #A7E9AF;
     border: 1px solid #99CEA8;
@@ -88,5 +120,13 @@ h1{
     }
     .header{
         margin-bottom: 80px;
+    }
+    .timer{
+        height: 45px;
+        width: 100px;
+    }
+    .cardCounter{
+        height: 45px;
+        width: 100px;
     }
 }
