@@ -4,7 +4,7 @@ body{
 
 img {
     height: 100px;
-    height: 100px;
+    width: 100px;
 }
 
 .header{
@@ -29,6 +29,8 @@ img {
     backface-visibility:hidden;
     width: 100%;
     height: 100%;
+    transition: all .5s;
+    transform-style: preserve-3d;
 }
 .parrotCard{
     position: relative;
@@ -38,6 +40,14 @@ img {
 
 .back-face{
     transform: rotateY(180deg);
+}
+
+.back-face.flipped{
+    transform: rotateY(0deg);
+}
+
+.front-face.flipped{
+    transform: rotateY(-180deg);
 }
 
 ul{

@@ -34,10 +34,6 @@ function dealCards(numberCards){
                 </div>
             </li>`;
         }
-
-
-
-
  }
 
  function randomizer(){
@@ -48,6 +44,9 @@ function ulSizeAdjust(list, numberCards){
     list.style.width = `${132 * (numberCards/2)}px`
 }
 
-//function cardFlip()
+function cardFlip(card){
+    card.children[0].classList.add("flipped");
+    card.children[1].classList.add("flipped");
+}
 
 gameStart()
